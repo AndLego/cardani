@@ -1,0 +1,55 @@
+.cover {
+    display: flex;
+}
+
+.cover article:first-child {
+    flex-basis: 60%;
+    background-image: url("https://www.elpanaderodeeugui.com/wp-content/uploads/2019/12/panaderia-01.jpg");
+    background-repeat: no-repeat;
+    /* background-position: center center; */
+    background-size: contain;
+    background-attachment: fixed;
+    height: 560px;
+}
+
+.cover article:last-child {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--fondo);
+    padding: 40px 0;
+}
+
+.cover article:last-child h1 {
+    font-family: var(--cursive);
+    font-size: 3.2rem;
+    font-weight: 100;
+    line-height: 2px;
+}
+
+.cover article:last-child h5 {
+    font-size: 3.6rem;
+    font-family: var(--titulo);
+    font-weight: 100
+}
+
+.cover article:last-child p {
+    font-family: var(--texto);
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 28px;
+}
+
+@media screen and (max-width: 800px) {
+    .cover {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cover article:first-child div{
+        height: 268px;
+    }
+}

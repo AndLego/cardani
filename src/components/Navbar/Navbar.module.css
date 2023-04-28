@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--acento);
+    font-family: var(--texto);
+}
+
+.nav img {
+    width: 92px;
+    height: 72px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    font-size: 2rem;
+}
+
+.nav svg {
+    width: 36px;
+    height: 36px;
+    color: var(--fondo);
+    background-color: var(--boton1);
+    border-radius: 50%;
+    padding: 4px;
+}

@@ -1,11 +1,15 @@
+import { Navbar, Cover, HowItsMade } from "./components/index"
 import "./App.css";
 
 function App() {
   return (
     <>
       <div className="background">
-        <div className="triangle_left"></div>
-        <div className="triangle_right"></div>
+        <Navbar />
+        <Cover />
+        <HowItsMade />
+        <HowItsMade />
+        <HowItsMade />
       </div>
     </>
   );

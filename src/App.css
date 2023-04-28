@@ -1,11 +1,15 @@
 :root {
-  --fondo: #1c1c1c;
+  --fondo: #f2f2f2;
   --texto_principal: #ffffff;
   --texto_secundario: #f2f2f2;
   --boton1: #e83c3c;
   --boton2: #ffd700;
   --resaltado: #ffab2e;
-  --acento: #e8a873;
+  --acento: #dbc6b6;
+
+  --cursive: 'Great Vibes', cursive;
+  --texto: 'Roboto', sans-serif;
+  --titulo: 'Vina Sans', cursive;
 }
 
 * {
@@ -16,26 +20,58 @@
 
 html {
   font-size: 62.5%;
-  background-color: var(--fondo);
+  background-color: var(--acento);
+}
+
+h2 {
+  margin: 40px 0;
 }
 
 .background {
   position: relative;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .triangle_left {
-  background-color: #ffd700;
-  width: 1000px;
-  height: 1000px;
   position: absolute;
   top: 120px;
   left: -436px;
+  width: 1000px;
+  height: 500px;
   transform: rotate(45deg);
-  border-radius: 104px;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.triangle_image_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg);
+}
+
+.triangle_image {
+  background-image: url("https://i.postimg.cc/Bns776F1/table2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-attachment: fixed;
+  transform: rotate(45deg);
+}
+
+.triangle_left img {
+  /* transform: rotate(-45deg);
+  position: absolute;
+  top: -164px;
+  right: 110px;
+  width: 540px;
+  filter: drop-shadow(2px 4px 6px black); */
 }
 
 @media screen and (max-width: 1200px) {
@@ -43,9 +79,16 @@ html {
     left: -580px;
   }
 }
+
 @media screen and (max-width: 800px) {
   .triangle_left {
     top: 30px;
     left: -760px;
+  }
+
+  .triangle_left img {
+    width: 316px;
+    right: 90px;
+    top: -100px;
   }
 }
