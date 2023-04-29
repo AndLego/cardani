@@ -1,0 +1,28 @@
+.footer {
+    background-color: var(--fondo_negro);
+    color: var(--texto_secundario);
+    font-family: var(--texto);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px;
+    align-items: flex-end;
+}
+
+.footer>ul {
+    list-style: none;
+}
+
+.footer li img {
+    filter: invert(1);
+    width: 80px;
+}
+
+.footer li {
+    margin-top: 8px;
+    font-size: 1.2rem;
+}
+
+.footer li svg {
+    font-size: 2rem;
+}

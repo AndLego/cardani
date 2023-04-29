@@ -1,4 +1,4 @@
-import { Navbar, Cover, HowItsMade } from "./components/index"
+import { Navbar, Cover, HowItsMade, Team, Footer } from "./components/index"
 import "./App.css";
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
         <Navbar />
         <Cover />
         <HowItsMade />
-        <HowItsMade />
-        <HowItsMade />
+        <Team />
+        <Footer />
       </div>
     </>
   );
