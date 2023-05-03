@@ -1,13 +1,18 @@
 import { TbBaguette, TbArrowNarrowRight } from 'react-icons/tb';
+import { Link } from "react-router-dom";
 import style from "./Btn_Ordena.module.css"
 
 const Btn_Ordena = () => {
     return (
-        <button className={style.button}>
+        <Link
+            to="/menu"
+            className={style.button}>
+
             <TbBaguette />
             Ordena Ya
             <TbArrowNarrowRight />
-        </button>
+
+        </Link>
     );
 }
 
