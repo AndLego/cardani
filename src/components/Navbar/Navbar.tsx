@@ -8,9 +8,8 @@ const Navbar = () => {
             <img src="https://i.postimg.cc/ZKBtrCSP/cardanni-logo.png" alt="cardanni logo" />
             <ul>
                 {rutas.map(ruta => (
-                    <li>
+                    <li key={ruta.id}>
                         <NavLink
-                            key={ruta.id}
                             to={ruta.to}
                             style={({ isActive }) => (
                                 {
