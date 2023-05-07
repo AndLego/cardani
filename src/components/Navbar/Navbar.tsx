@@ -1,11 +1,14 @@
 import { AiOutlineShopping } from 'react-icons/ai';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../../public/logo.svg"
 import style from "./Navbar.module.css"
 
 const Navbar = () => {
     return (
         <nav className={style.nav}>
-            <img src="https://i.postimg.cc/ZKBtrCSP/cardanni-logo.png" alt="cardanni logo" />
+            <Link to="/">
+                <img src={logo} alt="cardanni logo" />
+            </Link>
             <ul>
                 {rutas.map(ruta => (
                     <li key={ruta.id}>
@@ -13,7 +16,7 @@ const Navbar = () => {
                             to={ruta.to}
                             style={({ isActive }) => (
                                 {
-                                    color: isActive ? "var(--boton1)" : "var(--fondo-negro)",
+                                    color: isActive ? "var(--dorado)" : "var(--fondo-negro)",
                                     fontWeight: isActive ? "600" : "400"
                                 }
 

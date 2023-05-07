@@ -65,31 +65,3 @@ h2 {
   background-attachment: fixed;
   transform: rotate(45deg);
 }
-
-.triangle_left img {
-  /* transform: rotate(-45deg);
-  position: absolute;
-  top: -164px;
-  right: 110px;
-  width: 540px;
-  filter: drop-shadow(2px 4px 6px black); */
-}
-
-@media screen and (max-width: 1200px) {
-  .triangle_left {
-    left: -580px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .triangle_left {
-    top: 30px;
-    left: -760px;
-  }
-
-  .triangle_left img {
-    width: 316px;
-    right: 90px;
-    top: -100px;
-  }
-}
