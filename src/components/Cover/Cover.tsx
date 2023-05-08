@@ -65,7 +65,7 @@ const imagenesCover = [
         image: "https://www.namesnack.com/images/namesnack-bakery-business-names-4568x3401-2020105.jpeg?crop=21:16,smart&width=420&dpr=2",
         title: "imagen_2",
         evento: "Navidad",
-        slogan: "Regala amor con Cardanni",
+        slogan: "Para la Familia",
         message: "en este laskdlaka celebra saocmamsanas y nosotros, porque te queremos 2"
     },
     {
@@ -76,15 +76,3 @@ const imagenesCover = [
         message: "en este laskdlaka celebra saocmamsanas y nosotros, porque te queremos 3"
     }
 ]
-
-
-
-      // <section className={style.cover}>
-        //     <article>
-        //         <h1>Cardanni</h1>
-        //         <h5>Para las Madres</h5>
-        //         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam distinctio nobis possimus placeat commodi odit repudiandae nulla magni expedita sint optio est aperiam ullam totam, culpa mollitia consectetur molestiae dolorem?</p>
-
-        //         <Btn_Ordena />
-        //     </article>
-        // </section>

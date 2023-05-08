@@ -1,98 +1,75 @@
 .team {
-    background-image: url(https://img1.wsimg.com/isteam/ip/124486d7-b189-4197-a6be-dd761af79c1e/IMG_2132.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     position: relative;
-    padding: 40px;
     gap: 40px;
+    justify-content: center;
 }
 
-.team h1 {
-    color: var(--texto_principal);
-    font-family: var(--titulo);
-    font-size: 4rem;
-    font-weight: 100;
-    letter-spacing: 1px;
-    z-index: 1;
-}
-
-.team p {
-    color: var(--texto_principal);
-    font-family: var(--texto);
-    font-size: 3.2rem;
-    font-weight: 100;
-    text-align: center;
-    width: 60%;
-    z-index: 1;
-}
-
-.shadow {
+.team::after {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-    opacity: 0.8;
+    background-color: beige;
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/989dcf82128693.5d13e09e5ce18.jpg);
+    background-size: cover;
+    filter: brightness(0.5);
+    background-attachment: fixed;
 }
 
-.chefs {
+.team article {
+    flex-basis: 20%;
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    z-index: 1;
-}
-
-.chefs>div {
-    width: 350px;
-    border: 2px solid var(--texto_secundario);
-    border-radius: 24px;
-    display: flex;
+    gap: 20px;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 10;
+    padding: 80px 0;
 }
 
-.chefs>div img {
-    width: 260px;
-    padding: 0px 20px 0px 20px;
-}
-
-.chefs>div>div {
-    width: 350px;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0 0 20px 20px;
-    background-color: var(--texto_secundario);
-    align-items: center;
-    padding-bottom: 20px;
-}
-
-.chefs>div h2 {
+.team article h1 {
     font-family: var(--cursive);
-    font-size: 3.2rem;
-    margin: 20px;
+    font-size: 4.8rem;
+    font-weight: 100;
+    letter-spacing: 1px;
 }
 
-.chefs>div p {
-    color: #333333;
-    font-size: 2rem;
+.team article h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-family: var(--texto);
+    letter-spacing: 2px;
 }
 
-@media screen and (max-width: 800px) {
-    .chefs {
+.team article img {
+    height: 260px;
+    transition: all ease-in 0.2s;
+}
+
+.team article img:hover {
+    transform: scale(1.1);
+}
+
+.team article p {
+    font-size: 1.8rem;
+    font-family: var(--texto);
+    font-weight: 100;
+}
+
+@media screen and (max-width: 820px) {
+    .team {
         flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        padding: 60px 0;
     }
 
-    .team p {
-        font-size: 2.4rem;
+    .team article{
+        padding: 20px 0;
+        max-width: 340px;
+        align-self: center;
+        align-items: center;
     }
 
 }
