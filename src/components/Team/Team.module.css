@@ -12,7 +12,7 @@
     width: 100%;
     height: 100%;
     background-color: beige;
-    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/989dcf82128693.5d13e09e5ce18.jpg);
+    background-image: url(https://i.postimg.cc/50pk88XG/bakery-vector-seamless-pattern-engraved-elements-background-design-bread-pastry-pie-buns-sweets-cupc.jpg);
     background-size: cover;
     filter: brightness(0.38);
     background-attachment: fixed;
@@ -34,6 +34,7 @@
     font-size: 4.8rem;
     font-weight: 100;
     letter-spacing: 1px;
+    margin: 12px 0 -24px;
 }
 
 .team article h2 {
@@ -44,12 +45,12 @@
     letter-spacing: 2px;
 }
 
-.team article img {
+.chef {
     height: 260px;
     transition: all ease-in 0.2s;
 }
 
-.team article img:hover {
+.chef:hover {
     transform: scale(1.1);
 }
 
@@ -65,7 +66,7 @@
         padding: 60px 0;
     }
 
-    .team article{
+    .team article {
         padding: 20px 0;
         max-width: 340px;
         align-self: center;

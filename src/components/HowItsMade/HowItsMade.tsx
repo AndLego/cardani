@@ -6,7 +6,7 @@ const HowItsMade = () => {
             <article>
                 <h5>¿Como lo hacemos?</h5>
                 <p>Nuestros insumos son comprados directamente a los campesinos de nuestro país.</p>
-                {/* <Btn_Ordena /> */}
+                <img className="manchita" src="https://ahconsultora.com/wp-content/uploads/2022/12/manchita-celeste.svg" alt="" />
             </article>
             <article>
                 <div>
