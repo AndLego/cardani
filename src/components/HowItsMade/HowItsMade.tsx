@@ -1,4 +1,3 @@
-import Btn_Ordena from "../Btn_Ordena/Btn_Ordena";
 import style from "./HowItsMade.module.css"
 
 const HowItsMade = () => {
