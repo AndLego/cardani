@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Navbar } from "./components/index";
+import { Footer, Navbar } from "./components/index";
 import { Contact, Landing, Menu } from "./pages/index";
 
 function App() {
@@ -16,6 +16,8 @@ function App() {
             <Route path="/menu" element={< Menu />} />
             <Route path="/contact" element={< Contact />} />
           </Routes>
+
+          <Footer />
 
         </div>
       </HashRouter>

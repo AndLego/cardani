@@ -1,4 +1,4 @@
-import { Cover, Footer, HowItsMade, Team } from "../components/index";
+import { Cover, HowItsMade, Team } from "../components/index";
 
 const Landing = () => {
     return (
@@ -6,7 +6,6 @@ const Landing = () => {
             <Cover />
             <HowItsMade />
             <Team />
-            <Footer />
         </>
     );
 }

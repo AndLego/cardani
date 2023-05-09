@@ -1,60 +1,34 @@
+import React from 'react';
+import style from "./styles/Menu.module.css"
+import { Catalogo } from "../components";
+import { elMenu } from '../utils/Productos';
+
 const Menu = () => {
+    const [indiceProductos, setIndiceProductos] = React.useState(1)
+
+    //el indice no indica que categoria se renderiza ej: elMenu[1] === ojaldres
+    const elegirCategoria = (index: number) => {
+        setIndiceProductos(index)
+    }
+
     return (
-        <div></div>
+        <section className={style.menu}>
+            <article className={style.info}>
+                <h1>Disfruta al mejor precio</h1>
+                <p>Cardanni es una panaderia artesanal en la que todos los panes son hechos con amor y pasion. Nuestra mision es traer el arte del pan a sus raices y compartir con otros en sus mesas</p>
+            </article>
+
+            <ul className={style.indice}>
+                {elMenu.map((categoria, index) => (
+                    <li key={index} className={index === indiceProductos ? style.actual : ""} onClick={() => elegirCategoria(index)}>
+                        {categoria.categoria}
+                    </li>
+                ))}
+            </ul>
+
+            <Catalogo productos={elMenu[indiceProductos].productos} />
+        </section>
     );
 }
 
 export default Menu;
-
-// const elMenu: Producto[] = [
-//     {
-//         id: 1,
-//         producto: "Brioche",
-//         descripcion: "Bread is a bakery that specuakuzes in handcrafted breads ade wth only the freshest and finest ingredients",
-//         precio: 35,
-//         img: "https://www.thearionsas.com/wp-content/uploads/2020/08/unnamed-1.jpg"
-//     },
-//     {
-//         id: 2,
-//         producto: "Pan de masa madre",
-//         descripcion: "Bread is a bakery that specuakuzes in handcrafted breads ade wth only the freshest and finest ingredients",
-//         precio: 35,
-//         img: "https://www.thearionsas.com/wp-content/uploads/2020/08/unnamed-1.jpg"
-//     },
-//     {
-//         id: 3,
-//         producto: "Corissant de oreo",
-//         descripcion: "Bread is a bakery that specuakuzes in handcrafted breads ade wth only the freshest and finest ingredients",
-//         precio: 35,
-//         img: "https://www.thearionsas.com/wp-content/uploads/2020/08/unnamed-1.jpg"
-//     },
-//     {
-//         id: 4,
-//         producto: "PAn de hamrbuguesa",
-//         descripcion: "Bread is a bakery that specuakuzes in handcrafted breads ade wth only the freshest and finest ingredients",
-//         precio: 35,
-//         img: "https://www.thearionsas.com/wp-content/uploads/2020/08/unnamed-1.jpg"
-//     },
-//     {
-//         id: 5,
-//         producto: "MEdia luna francesa",
-//         descripcion: "Bread is a bakery that specuakuzes in handcrafted breads ade wth only the freshest and finest ingredients",
-//         precio: 35,
-//         img: "https://www.thearionsas.com/wp-content/uploads/2020/08/unnamed-1.jpg"
-//     },
-//     {
-//         id: 6,
-//         producto: "Brazo de reinao de rey mi rey",
-//         descripcion: "Bread is a bakery that specuakuzes in handcrafted breads ade wth only the freshest and finest ingredients",
-//         precio: 35,
-//         img: "https://www.thearionsas.com/wp-content/uploads/2020/08/unnamed-1.jpg"
-//     },
-// ]
-
-// interface Producto {
-//     id: number,
-//     producto: string,
-//     descripcion: string,
-//     precio: number,
-//     img: string
-// }
