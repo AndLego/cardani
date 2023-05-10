@@ -34,40 +34,18 @@ h2 {
   height: 100vh;
 }
 
-.triangle_left {
-  position: absolute;
-  top: 120px;
-  left: -436px;
-  width: 1000px;
-  height: 500px;
-  transform: rotate(45deg);
-  overflow: hidden;
-  z-index: -10;
-}
-
-.triangle_image_container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform: rotate(-45deg);
-}
-
-.triangle_image {
-  background-image: url("https://i.postimg.cc/Bns776F1/table2.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-attachment: fixed;
-  transform: rotate(45deg);
-}
-
 .manchita {
   width: 148px;
   filter: sepia(1);
+}
+
+
+/* evitar que la pantalla scrolle si el carro esta abierto */
+.hidden-scroll {
+  overflow: hidden;
+}
+
+/* Ocultar scrollbar */
+.hidden-scroll body::-webkit-scrollbar {
+  display: none;
 }

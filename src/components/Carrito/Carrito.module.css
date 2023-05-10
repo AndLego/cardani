@@ -1,0 +1,123 @@
+.comprando {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #1a1a1abf;
+}
+
+.vacio {
+    height: 100vh;
+    width: 100%;
+}
+
+.carrito {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 340px;
+    height: 100vh;
+    background-color: var(--cards);
+}
+
+.carrito>div:first-of-type {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.carrito .closeCart {
+    font-size: 3.2rem;
+    cursor: pointer;
+}
+
+.carrito h2 {
+    margin: initial;
+    font-family: var(--cursive);
+    font-size: 3.2rem;
+    font-weight: 100;
+}
+
+.items {
+    overflow-y: auto;
+    background-color: var(--fondo_negro);
+    height: 72%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 36px 20px;
+    border-radius: 40px 40px 0 0;
+}
+
+.producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--cards);
+    padding: 8px 4px;
+    border-radius: 4px;
+}
+
+.producto>div:first-of-type {
+    width: 50%;
+}
+
+.producto>div:first-of-type p {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.producto>p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--resaltado);
+}
+
+.cantidades {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidades button {
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    border: none;
+    background-color: var(--dorado);
+    border-radius: 50%;
+}
+
+.cantidades span {
+    font-size: 1.6rem;
+
+}
+
+.total {
+    background-color: #212121;
+    height: 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.total h3 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.total button {
+    font-size: 2rem;
+    background-color: var(--dorado);
+    border: none;
+    border-radius: 20px;
+    padding: 4px 8px;
+    width: 60%;
+    cursor: pointer;
+}

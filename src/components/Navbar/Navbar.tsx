@@ -2,16 +2,30 @@ import React from 'react';
 import { AiOutlineShopping, AiOutlineClose } from 'react-icons/ai';
 import { CgMenuCake } from 'react-icons/cg';
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../public/logo.svg"
+import logo from "/logo.svg"
 import style from "./Navbar.module.css"
+import Carrito from '../Carrito/Carrito';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isCartOpen, setIsCartOpen] = React.useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
-        console.log(isMenuOpen)
     };
+
+    const toggleCart = () => {
+        setIsCartOpen(!isCartOpen)
+        console.log(isCartOpen)
+    }
+
+    React.useEffect(() => {
+        if (isCartOpen) {
+            document.body.classList.add('hidden-scroll');
+        } else {
+            document.body.classList.remove('hidden-scroll');
+        }
+    }, [isCartOpen]);
 
     return (
         <nav className={style.nav}>
@@ -43,7 +57,8 @@ const Navbar = () => {
             </ul>
 
             {/* Icono de carrito */}
-            <AiOutlineShopping className={style.cart} />
+            <AiOutlineShopping className={style.cart} onClick={toggleCart} />
+            {isCartOpen && <Carrito toggleCart={toggleCart} />}
 
             {/* Menú modal en pantallas más pequeñas */}
             {isMenuOpen && (

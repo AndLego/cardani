@@ -1,8 +1,8 @@
 import style from "./Catalogo.module.css"
 import { BsCartPlusFill } from 'react-icons/bs';
-import blob1 from "../../../public/blob1.svg"
-import blob2 from "../../../public/blob2.svg"
-import flecha from "../../../public/flecha.svg"
+import blob1 from "/blob1.svg"
+import blob2 from "/blob2.svg"
+import flecha from "/flecha.svg"
 import { Producto } from '../../utils/Productos';
 
 type CatalogoProps = {
