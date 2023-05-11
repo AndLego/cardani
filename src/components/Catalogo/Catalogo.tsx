@@ -1,9 +1,11 @@
+import React from "react";
 import style from "./Catalogo.module.css"
 import { BsCartPlusFill } from 'react-icons/bs';
 import blob1 from "/blob1.svg"
 import blob2 from "/blob2.svg"
 import flecha from "/flecha.svg"
 import { Producto } from '../../utils/Productos';
+import { Item, actionType, carritoReducer, initialState } from "../../utils/CartReducer";
 
 type CatalogoProps = {
     productos: Producto[]
@@ -14,6 +16,21 @@ const Catalogo = ({ productos }: CatalogoProps) => {
     const esImpar = (id: number) => {
         return id % 2 !== 0
     }
+    // reducer para agregar al carrito
+
+    const [carritoState, dispatch] = React.useReducer(carritoReducer, initialState)
+
+    /**funcion para agregar al carrito */
+
+    const addToCart = (item: Item) => {
+        dispatch({
+            type: actionType.ADD_TO_CART,
+            payload: item
+        })
+    }
+
+    console.log(carritoState)
+
     return (
         <section className={style.contenedorProductos}>
             {productos.map((producto) => {
@@ -23,7 +40,14 @@ const Catalogo = ({ productos }: CatalogoProps) => {
                         <div className={`${style.info} ${style.infoPar}`}>
                             <h2>{producto.nombre}</h2>
                             <p>{producto.descripcion} {producto.opcional}</p>
-                            <button>
+                            <button onClick={
+                                () =>
+                                    addToCart({
+                                        id: producto.id,
+                                        name: producto.nombre,
+                                        price: producto.precio,
+                                        qty: 1
+                                    })}>
                                 <span>Agregar al carrito</span>
                                 <BsCartPlusFill className={style.addPar} />
                             </button>
@@ -51,7 +75,14 @@ const Catalogo = ({ productos }: CatalogoProps) => {
                         <div className={`${style.info} ${style.infoImpar}`}>
                             <h2>{producto.nombre}</h2>
                             <p>{producto.descripcion} {producto.opcional}</p>
-                            <button>
+                            <button onClick={
+                                () =>
+                                    addToCart({
+                                        id: producto.id,
+                                        name: producto.nombre,
+                                        price: producto.precio,
+                                        qty: 1
+                                    })}>
                                 <span>Agregar al carrito</span>
                                 <BsCartPlusFill className={style.addImpar} />
                             </button>

@@ -37,6 +37,7 @@
     background-color: var(--boton1);
     border-radius: 50%;
     padding: 4px;
+    cursor: pointer;
 }
 
 /* Estilos para el modal del menú en pantallas pequeñas */
