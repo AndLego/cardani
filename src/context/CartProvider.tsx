@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { actionType, carritoReducer, initialState } from '../../utils/CartReducer';
+import { actionType, carritoReducer, initialState } from '../utils/CartReducer';
 import { CartContextType, Item } from '../types/types';
 
 const CartContext = React.createContext<CartContextType>({

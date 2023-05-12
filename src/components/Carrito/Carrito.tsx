@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineClose, AiFillDelete } from 'react-icons/ai';
 import { GrFormAdd, GrFormSubtract } from 'react-icons/gr';
 import style from "./Carrito.module.css"
-import { CartContext } from '../context/CartProvider';
+import { CartContext } from '../../context/CartProvider';
 
 interface CarritoProps {
     toggleCart: () => void;

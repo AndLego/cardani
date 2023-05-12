@@ -5,7 +5,7 @@ import blob1 from "/blob1.svg"
 import blob2 from "/blob2.svg"
 import flecha from "/flecha.svg"
 import { Producto } from '../../utils/Productos';
-import { CartContext } from "../context/CartProvider";
+import { CartContext } from "../../context/CartProvider";
 
 type CatalogoProps = {
     productos: Producto[]

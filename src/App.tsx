@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { Footer, Navbar } from "./components/index";
+import { Footer, Navbar, ScrollToTop } from "./components/index";
 import { Contact, Landing, Menu } from "./pages/index";
 
 function App() {
@@ -10,6 +10,8 @@ function App() {
 
         <div className="background">
           <Navbar />
+
+          <ScrollToTop />
 
           <Routes>
             <Route path="/" element={< Landing />} />

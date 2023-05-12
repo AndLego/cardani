@@ -1,4 +1,4 @@
-import { Action, Item, State } from "../components/types/types";
+import { Action, Item, State } from "../types/types";
 
 // Para evitar typos
 export const actionType = {

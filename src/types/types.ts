@@ -1,4 +1,4 @@
-import { actionType } from "../../utils/CartReducer";
+import { actionType } from "../utils/CartReducer";
 
 /**types para el reducer */
 export interface Item {
