@@ -8,10 +8,20 @@ const CartContext = React.createContext<CartContextType>({
     addToCart: () => { },
     removeFromCart: () => { },
     clearCart: () => { },
-
+    toggleCart: () => { },
+    isCartOpen: false
 })
 
 const useCart = () => {
+
+    /**funcion para abrir o cerrar el carrito */
+    const [isCartOpen, setIsCartOpen] = React.useState(false);
+
+
+    const toggleCart = () => {
+        setIsCartOpen(!isCartOpen)
+    }
+
     /**funciones para el manejo del carrito */
 
     const [carritoState, dispatch] = React.useReducer(carritoReducer, initialState)
@@ -41,7 +51,7 @@ const useCart = () => {
         })
     }
 
-    return { carritoState, addToCart, removeFromCart, clearCart }
+    return { carritoState, addToCart, removeFromCart, clearCart, toggleCart, isCartOpen }
 }
 
 interface Props {
@@ -49,14 +59,16 @@ interface Props {
 }
 
 const CartProvider = ({ children }: Props) => {
-    const { carritoState, addToCart, removeFromCart, clearCart } = useCart()
+    const { carritoState, addToCart, removeFromCart, clearCart, toggleCart, isCartOpen } = useCart()
 
     return <CartContext.Provider value={
         {
             carritoState,
             addToCart,
             removeFromCart,
-            clearCart
+            clearCart,
+            toggleCart,
+            isCartOpen
         }
     }>
         {children}

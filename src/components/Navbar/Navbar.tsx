@@ -5,18 +5,16 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "/logo.svg"
 import style from "./Navbar.module.css"
 import Carrito from '../Carrito/Carrito';
+import { CartContext } from '../../context/CartProvider';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const [isCartOpen, setIsCartOpen] = React.useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const toggleCart = () => {
-        setIsCartOpen(!isCartOpen)
-    }
+    const { toggleCart, isCartOpen } = React.useContext(CartContext)
 
     React.useEffect(() => {
         if (isCartOpen) {

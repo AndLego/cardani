@@ -65,6 +65,8 @@
 .info button {
     display: flex;
     padding: 4px 8px;
+    width: 140px;
+    height: 28px;
     border: none;
     margin-top: 12px;
     font-family: var(--texto);
@@ -73,6 +75,8 @@
     border-radius: 4px;
     color: var(--cards);
     background-color: var(--acento);
+    align-items: center;
+    justify-content: center;
 }
 
 .info h2 {
@@ -102,6 +106,22 @@
     position: absolute;
     rotate: 63deg;
     top: 74px;
+}
+
+.loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-top-color: var(--fondo_negro);
+    animation: loader-animation 1s ease-in-out infinite;
+}
+
+@keyframes loader-animation {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width: 1000px) {

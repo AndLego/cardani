@@ -13,6 +13,33 @@ const Carrito = ({ toggleCart }: CarritoProps) => {
 
     const { carritoState, addToCart, removeFromCart, clearCart } = React.useContext(CartContext)
 
+    /**funcion para el total de la compra */
+
+    const handleTotal = () => {
+        const total = carritoState.items.reduce((accum, item) => {
+            return accum + (item.price * item.qty);
+        }, 0);
+
+        return parseFloat(total.toFixed(2))
+    }
+
+    /**funcion para realizar el pedido via whatsapp */
+
+    const crearTextoPedido = () => {
+        let mensaje = "¡Hola! Quiero hacer el pedido de:\n\n";
+        carritoState.items.forEach((producto) => {
+            mensaje += `${producto.qty} x ${producto.name} por $${parseFloat((producto.price * producto.qty).toFixed(2))}\n, `;
+        });
+        mensaje += `\nTotal: $${handleTotal()}\n`;
+
+        return mensaje;
+    }
+
+    const enviarPedido = () => {
+        const textoPedido = encodeURIComponent(crearTextoPedido());
+        window.open(`https://wa.me/573016844548?text=${textoPedido}`, '_blank');
+    }
+
     return (
         <div className={style.comprando} >
             <section className={style.vacio} onClick={toggleCart}></section>
@@ -53,8 +80,8 @@ const Carrito = ({ toggleCart }: CarritoProps) => {
                     ))}
                 </div>
                 <div className={style.total}>
-                    <h3>Total: <span>40000</span> </h3>
-                    <button>Hacer Pedido</button>
+                    <h3>Total: <span>$ {handleTotal()}</span> </h3>
+                    <button onClick={enviarPedido}>Hacer Pedido</button>
                 </div>
             </section>
         </div>
@@ -63,62 +90,3 @@ const Carrito = ({ toggleCart }: CarritoProps) => {
 }
 
 export default Carrito;
-
-const prueba = [
-    {
-        id: 1,
-        nombre: "pan de mantquiella con pistacho",
-        cantidad: 7,
-        precio: 15,
-        img: "https://firebasestorage.googleapis.com/v0/b/jibaro-restaurant.appspot.com/o/Images%2F1668714273062-c3.png?alt=media&token=c8144e06-7e38-4513-b11d-3e32fc85e3a1"
-    },
-    {
-        id: 2,
-        nombre: "pan de mantquiella con pistacho",
-        cantidad: 7,
-        precio: 15,
-        img: "https://firebasestorage.googleapis.com/v0/b/jibaro-restaurant.appspot.com/o/Images%2F1668714273062-c3.png?alt=media&token=c8144e06-7e38-4513-b11d-3e32fc85e3a1"
-    },
-    {
-        id: 3,
-        nombre: "pan de mantquiella con pistacho",
-        cantidad: 7,
-        precio: 15,
-        img: "https://firebasestorage.googleapis.com/v0/b/jibaro-restaurant.appspot.com/o/Images%2F1668714273062-c3.png?alt=media&token=c8144e06-7e38-4513-b11d-3e32fc85e3a1"
-    },
-    {
-        id: 4,
-        nombre: "pan de mantquiella con pistacho",
-        cantidad: 7,
-        precio: 15,
-        img: "https://firebasestorage.googleapis.com/v0/b/jibaro-restaurant.appspot.com/o/Images%2F1668714273062-c3.png?alt=media&token=c8144e06-7e38-4513-b11d-3e32fc85e3a1"
-    },
-    {
-        id: 5,
-        nombre: "pan de mantquiella con pistacho",
-        cantidad: 7,
-        precio: 15,
-        img: "https://firebasestorage.googleapis.com/v0/b/jibaro-restaurant.appspot.com/o/Images%2F1668714273062-c3.png?alt=media&token=c8144e06-7e38-4513-b11d-3e32fc85e3a1"
-    },
-    {
-        id: 6,
-        nombre: "pan de mantquiella con pistacho",
-        cantidad: 7,
-        precio: 15,
-        img: "https://firebasestorage.googleapis.com/v0/b/jibaro-restaurant.appspot.com/o/Images%2F1668714273062-c3.png?alt=media&token=c8144e06-7e38-4513-b11d-3e32fc85e3a1"
-    },
-    {
-        id: 7,
-        nombre: "pan de mantquiella con pistacho",
-        cantidad: 7,
-        precio: 15,
-        img: "https://firebasestorage.googleapis.com/v0/b/jibaro-restaurant.appspot.com/o/Images%2F1668714273062-c3.png?alt=media&token=c8144e06-7e38-4513-b11d-3e32fc85e3a1"
-    },
-    {
-        id: 8,
-        nombre: "pan de mantquiella con pistacho",
-        cantidad: 7,
-        precio: 15,
-        img: "https://firebasestorage.googleapis.com/v0/b/jibaro-restaurant.appspot.com/o/Images%2F1668714273062-c3.png?alt=media&token=c8144e06-7e38-4513-b11d-3e32fc85e3a1"
-    },
-]

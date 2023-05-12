@@ -38,4 +38,28 @@ export type CartContextType = {
     addToCart: (item: Item) => void;
     removeFromCart: (id: number) => void;
     clearCart: () => void;
+    toggleCart: () => void;
+    isCartOpen: boolean
 };
+
+
+/**types para prductos par e impar */
+
+export type ProductoProps = {
+    producto: Producto;
+}
+
+/**types para el array de productos */
+export interface Producto {
+    id: number,
+    name: string,
+    price: number,
+    img: string,
+    descripcion?: string,
+    opcional?: string
+}
+
+export interface Categoria {
+    categoria: string,
+    productos: Producto[]
+}
