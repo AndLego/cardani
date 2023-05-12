@@ -23,7 +23,12 @@ export interface REMOVE_FROM_CART {
     payload?: { id: number };
 }
 
-export type Action = ADD_TO_CART | REMOVE_FROM_CART
+export interface CLEAR_CART {
+    type: typeof actionType.CLEAR_CART;
+    payload?: { id: number };
+}
+
+export type Action = ADD_TO_CART | REMOVE_FROM_CART | CLEAR_CART
 
 
 /**types para el context */
@@ -32,4 +37,5 @@ export type CartContextType = {
     carritoState: State;
     addToCart: (item: Item) => void;
     removeFromCart: (id: number) => void;
+    clearCart: () => void;
 };

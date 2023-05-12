@@ -24,7 +24,7 @@
 .carrito>div:first-of-type {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 20px 0;
 }
@@ -39,6 +39,25 @@
     font-family: var(--cursive);
     font-size: 3.2rem;
     font-weight: 100;
+}
+
+.btnVaciar {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    gap: 4px;
+    padding: 4px 8px;
+    border: none;
+    background-color: var(--gris);
+    color: var(--acento);
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+.btnVaciar:hover {
+    background-color: var(--acento);
+    color: var(--gris);
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
 }
 
 .items {
@@ -120,4 +139,30 @@
     padding: 4px 8px;
     width: 60%;
     cursor: pointer;
+}
+
+
+/*efectos**/
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translateX(-1px) rotate(-0.5deg);
+    }
+
+    20%,
+    80% {
+        transform: translateX(2px) rotate(0.5deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translateX(-4px) rotate(-0.5deg);
+    }
+
+    40%,
+    60% {
+        transform: translateX(4px) rotate(0.5deg);
+    }
 }

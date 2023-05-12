@@ -3,7 +3,8 @@ import { Action, Item, State } from "../components/types/types";
 // Para evitar typos
 export const actionType = {
     ADD_TO_CART: "ADD_TO_CART",
-    REMOVE_FROM_CART: "REMOVE_FROM_CART"
+    REMOVE_FROM_CART: "REMOVE_FROM_CART",
+    CLEAR_CART: "CLEAR_CART"
 }
 
 /**estado inicial */
@@ -56,9 +57,6 @@ export const carritoReducer = (state: State, action: Action) => {
 
         case actionType.REMOVE_FROM_CART:
             if (!action.payload) return state;
-
-            console.log("item id:", state.items.map(item => item.id)); // Imprime los ids de los items en el estado
-            console.log("action payload id:", action.payload?.id);
             const findItemIndex = state.items.findIndex((item) => item.id === action.payload?.id);
             if (findItemIndex !== -1) {
                 const updatedItems = [...state.items];
@@ -78,6 +76,12 @@ export const carritoReducer = (state: State, action: Action) => {
                 };
             }
             return state;
+
+        case actionType.CLEAR_CART:
+            return {
+                ...state,
+                items: []
+            }
 
         default:
             return state

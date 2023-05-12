@@ -7,6 +7,7 @@ const CartContext = React.createContext<CartContextType>({
     carritoState: initialState,
     addToCart: () => { },
     removeFromCart: () => { },
+    clearCart: () => { },
 
 })
 
@@ -32,7 +33,15 @@ const useCart = () => {
         })
     }
 
-    return { carritoState, addToCart, removeFromCart }
+    /**vaciar carrito */
+
+    const clearCart = () => {
+        dispatch({
+            type: actionType.CLEAR_CART
+        })
+    }
+
+    return { carritoState, addToCart, removeFromCart, clearCart }
 }
 
 interface Props {
@@ -40,13 +49,14 @@ interface Props {
 }
 
 const CartProvider = ({ children }: Props) => {
-    const { carritoState, addToCart, removeFromCart } = useCart()
+    const { carritoState, addToCart, removeFromCart, clearCart } = useCart()
 
     return <CartContext.Provider value={
         {
             carritoState,
             addToCart,
-            removeFromCart
+            removeFromCart,
+            clearCart
         }
     }>
         {children}

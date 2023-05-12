@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose, AiFillDelete } from 'react-icons/ai';
 import { GrFormAdd, GrFormSubtract } from 'react-icons/gr';
 import style from "./Carrito.module.css"
 import { CartContext } from '../context/CartProvider';
@@ -11,7 +11,7 @@ interface CarritoProps {
 
 const Carrito = ({ toggleCart }: CarritoProps) => {
 
-    const { carritoState, addToCart, removeFromCart } = React.useContext(CartContext)
+    const { carritoState, addToCart, removeFromCart, clearCart } = React.useContext(CartContext)
 
     return (
         <div className={style.comprando} >
@@ -20,6 +20,10 @@ const Carrito = ({ toggleCart }: CarritoProps) => {
                 <div>
                     <AiOutlineClose className={style.closeCart} onClick={toggleCart} />
                     <h2>Carrito de compra</h2>
+                    <button className={style.btnVaciar} onClick={() => clearCart()}>
+                        <AiFillDelete />
+                        Vaciar
+                    </button>
                 </div>
                 <div className={style.items}>
                     {/* <!-- Aquí se mostrarán los elementos del carrito --> */}
