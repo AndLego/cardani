@@ -26,7 +26,11 @@
 }
 
 .imgProducto {
-    display: none;
+    position: absolute;
+    left: 56px;
+    bottom: 62px;
+    border-radius: 50%;
+    width: 156px;
 }
 
 .img .precio {

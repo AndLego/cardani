@@ -16,7 +16,6 @@ const Navbar = () => {
 
     const toggleCart = () => {
         setIsCartOpen(!isCartOpen)
-        console.log(isCartOpen)
     }
 
     React.useEffect(() => {

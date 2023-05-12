@@ -1,55 +1,84 @@
-export interface Item {
-    id: number;
-    name: string;
-    price: number;
-    qty: number
-}
+import { Action, Item, State } from "../components/types/types";
 
-export interface State {
-    items: Item[];
-}
-
+// Para evitar typos
 export const actionType = {
     ADD_TO_CART: "ADD_TO_CART",
     REMOVE_FROM_CART: "REMOVE_FROM_CART"
 }
 
-interface ADD_TO_CART {
-    type: typeof actionType.ADD_TO_CART;
-    payload?: Item;
-}
-
-interface REMOVE_FROM_CART {
-    type: typeof actionType.REMOVE_FROM_CART;
-    payload?: { id: number };
-}
-
-type Action = ADD_TO_CART | REMOVE_FROM_CART
-
-// ----------
-
+/**estado inicial */
 
 export const initialState: State = {
     items: []
 }
 
-export const carritoReducer = (state: typeof initialState, action: Action) => {
+export const carritoReducer = (state: State, action: Action) => {
     switch (action.type) {
+
         case actionType.ADD_TO_CART:
-            return {
-                ...state,
-                items: [
-                    ...state.items,
-                    action.payload
-                ]
+            if (!action.payload) return state;
+
+            const existingItemIndex = state.items.findIndex(newItem => newItem.id === action.payload?.id)
+            /**si el objeto existe, creamos una constante con el valor de los items del carrito, buscamos
+             * el objeto en cuestion y le incrementamos su cantidad en 1, 
+             * devolvemos al final la lista actualizada
+            */
+            if (existingItemIndex !== -1) {
+                const updatedItems = [...state.items]
+
+                updatedItems[existingItemIndex] = {
+                    ...updatedItems[existingItemIndex],
+                    qty: updatedItems[existingItemIndex].qty + 1
+                }
+
+                return {
+                    ...state,
+                    items: updatedItems
+                }
+            } else {
+                /**si el objeto no existe, crea uno nuevo */
+                const newItem: Item = {
+                    id: (action.payload as Item).id,
+                    name: (action.payload as Item).name,
+                    price: (action.payload as Item).price,
+                    qty: 1,
+                    img: (action.payload as Item).img
+                };
+                return {
+                    ...state,
+                    items: [
+                        ...state.items,
+                        newItem
+                    ]
+                }
             }
 
+
         case actionType.REMOVE_FROM_CART:
-            return {
-                ...state,
-                items:
-                    state.items.filter(item => item.id !== action.payload?.id)
+            if (!action.payload) return state;
+
+            console.log("item id:", state.items.map(item => item.id)); // Imprime los ids de los items en el estado
+            console.log("action payload id:", action.payload?.id);
+            const findItemIndex = state.items.findIndex((item) => item.id === action.payload?.id);
+            if (findItemIndex !== -1) {
+                const updatedItems = [...state.items];
+                const existingItem = updatedItems[findItemIndex];
+                const updatedItem = {
+                    ...existingItem,
+                    qty: existingItem.qty - 1,
+                };
+                if (updatedItem.qty <= 0) {
+                    updatedItems.splice(findItemIndex, 1);
+                } else {
+                    updatedItems[findItemIndex] = updatedItem;
+                }
+                return {
+                    ...state,
+                    items: updatedItems,
+                };
             }
+            return state;
+
         default:
             return state
     }

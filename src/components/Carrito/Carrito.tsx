@@ -1,6 +1,8 @@
+import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { GrFormAdd, GrFormSubtract } from 'react-icons/gr';
 import style from "./Carrito.module.css"
+import { CartContext } from '../context/CartProvider';
 
 interface CarritoProps {
     toggleCart: () => void;
@@ -8,6 +10,9 @@ interface CarritoProps {
 
 
 const Carrito = ({ toggleCart }: CarritoProps) => {
+
+    const { carritoState, addToCart, removeFromCart } = React.useContext(CartContext)
+
     return (
         <div className={style.comprando} >
             <section className={style.vacio} onClick={toggleCart}></section>
@@ -18,18 +23,28 @@ const Carrito = ({ toggleCart }: CarritoProps) => {
                 </div>
                 <div className={style.items}>
                     {/* <!-- Aquí se mostrarán los elementos del carrito --> */}
-                    {prueba.map((item) => (
+                    {carritoState.items.map((item) => (
                         <div className={style.producto} key={item.id}>
-                            <img src={item.img} alt={item.nombre} />
+                            <img src={item.img} alt={item.name} />
                             <div>
-                                <p>{item.nombre}</p>
+                                <p>{item.name}</p>
                                 <div className={style.cantidades}>
-                                    <button><GrFormSubtract /></button>
-                                    <span>{item.cantidad}</span>
-                                    <button><GrFormAdd /></button>
+                                    <button onClick={() => removeFromCart(item.id)}>
+                                        <GrFormSubtract />
+                                    </button>
+                                    <span>{item.qty}</span>
+                                    <button onClick={() => addToCart({
+                                        id: item.id,
+                                        name: item.name,
+                                        price: item.price,
+                                        qty: 1
+                                    })}>
+                                        <GrFormAdd />
+                                    </button>
                                 </div>
                             </div>
-                            <p>${item.precio * item.cantidad}</p>
+
+                            <p>${parseFloat((item.price * item.qty).toFixed(2))}</p>
                         </div>
                     ))}
                 </div>
