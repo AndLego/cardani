@@ -74,6 +74,24 @@
     display: none;
 }
 
+.CarritoBtn {
+    position: relative;
+}
+
+.Cantidad {
+    position: absolute;
+    bottom: -4px;
+    left: -8px;
+    background-color: var(--dorado);
+    padding: 4px;
+    border-radius: 50%;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    color: var(--fondo_negro);
+    font-weight: 600;
+}
+
 @media screen and (max-width: 800px) {
     .menu {
         display: initial;

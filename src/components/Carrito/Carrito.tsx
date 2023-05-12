@@ -52,37 +52,40 @@ const Carrito = ({ toggleCart }: CarritoProps) => {
                         Vaciar
                     </button>
                 </div>
-                <div className={style.items}>
-                    {/* <!-- Aquí se mostrarán los elementos del carrito --> */}
-                    {carritoState.items.map((item) => (
-                        <div className={style.producto} key={item.id}>
-                            <img src={item.img} alt={item.name} />
-                            <div>
-                                <p>{item.name}</p>
-                                <div className={style.cantidades}>
-                                    <button onClick={() => removeFromCart(item.id)}>
-                                        <GrFormSubtract />
-                                    </button>
-                                    <span>{item.qty}</span>
-                                    <button onClick={() => addToCart({
-                                        id: item.id,
-                                        name: item.name,
-                                        price: item.price,
-                                        qty: 1
-                                    })}>
-                                        <GrFormAdd />
-                                    </button>
-                                </div>
-                            </div>
+                {carritoState.items.length === 0 ? <p className={style.carritoVacio}>Tu carrito esta vacio</p> :
+                    <>
+                        <div className={style.items}>
+                            {/* <!-- Aquí se mostrarán los elementos del carrito --> */}
+                            {carritoState.items.map((item) => (
+                                <div className={style.producto} key={item.id}>
+                                    <img src={item.img} alt={item.name} />
+                                    <div>
+                                        <p>{item.name}</p>
+                                        <div className={style.cantidades}>
+                                            <button onClick={() => removeFromCart(item.id)}>
+                                                <GrFormSubtract />
+                                            </button>
+                                            <span>{item.qty}</span>
+                                            <button onClick={() => addToCart({
+                                                id: item.id,
+                                                name: item.name,
+                                                price: item.price,
+                                                qty: 1
+                                            })}>
+                                                <GrFormAdd />
+                                            </button>
+                                        </div>
+                                    </div>
 
-                            <p>${parseFloat((item.price * item.qty).toFixed(2))}</p>
+                                    <p>${parseFloat((item.price * item.qty).toFixed(2))}</p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-                <div className={style.total}>
-                    <h3>Total: <span>$ {handleTotal()}</span> </h3>
-                    <button onClick={enviarPedido}>Hacer Pedido</button>
-                </div>
+                        <div className={style.total}>
+                            <h3>Total: <span>$ {handleTotal()}</span> </h3>
+                            <button onClick={enviarPedido}>Hacer Pedido</button>
+                        </div>
+                    </>}
             </section>
         </div>
 

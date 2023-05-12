@@ -14,7 +14,7 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const { toggleCart, isCartOpen } = React.useContext(CartContext)
+    const { toggleCart, isCartOpen, carritoState } = React.useContext(CartContext)
 
     React.useEffect(() => {
         if (isCartOpen) {
@@ -23,6 +23,17 @@ const Navbar = () => {
             document.body.classList.remove('hidden-scroll');
         }
     }, [isCartOpen]);
+
+    /**contador de items del carrito */
+
+    const handleQuantity = () => {
+        let totalQuantity = 0;
+        carritoState.items.forEach((item) => {
+            totalQuantity += item.qty;
+        });
+        console.log(totalQuantity)
+        return totalQuantity;
+    }
 
     return (
         <nav className={style.nav}>
@@ -54,7 +65,13 @@ const Navbar = () => {
             </ul>
 
             {/* Icono de carrito */}
-            <AiOutlineShopping className={style.cart} onClick={toggleCart} />
+            <div className={style.CarritoBtn}>
+                <AiOutlineShopping className={style.cart} onClick={toggleCart} />
+                {
+                    carritoState.items.length !== 0 &&
+                    <div className={style.Cantidad}>{handleQuantity()}</div>
+                }
+            </div>
             {isCartOpen && <Carrito toggleCart={toggleCart} />}
 
             {/* Menú modal en pantallas más pequeñas */}
