@@ -5,7 +5,7 @@ export const elMenu: Categoria[] = [
         categoria: "hojaldre",
         productos: [
             {
-                id: 1,
+                id: 20,
                 nombre: "croissant de almendras",
                 descripcion: "9 cm aproximadamente.",
                 precio: 6,
@@ -13,7 +13,7 @@ export const elMenu: Categoria[] = [
                 opcional: "Version mini 5 centimetros por 3k"
             },
             {
-                id: 2,
+                id: 21,
                 nombre: "croissant de pistacho",
                 descripcion: "9 cm aproximadamente.",
                 precio: 6,
@@ -21,7 +21,7 @@ export const elMenu: Categoria[] = [
                 opcional: "Version mini 5 centimetros por 3k"
             },
             {
-                id: 3,
+                id: 22,
                 nombre: "croissant de arequipe",
                 descripcion: "9 cm aprox. Version mini: 5cm.",
                 precio: 5,
@@ -29,7 +29,7 @@ export const elMenu: Categoria[] = [
                 opcional: "Version mini 5 centimetros por 2.6k"
             },
             {
-                id: 4,
+                id: 23,
                 nombre: "rollo capresse",
                 descripcion: "",
                 precio: 5,
@@ -37,7 +37,7 @@ export const elMenu: Categoria[] = [
                 opcional: "Mini rollo 2.6k"
             },
             {
-                id: 5,
+                id: 24,
                 nombre: "croissant de mantequilla",
                 descripcion: "9 cm aproximadamente.",
                 precio: 3.4,
@@ -45,7 +45,7 @@ export const elMenu: Categoria[] = [
                 opcional: "Version mini 5 centimetros por 1.8k"
             },
             {
-                id: 6,
+                id: 25,
                 nombre: "pan de chocolate",
                 descripcion: "",
                 precio: 5,
@@ -53,7 +53,7 @@ export const elMenu: Categoria[] = [
                 opcional: "Version mini por 2.6k"
             },
             {
-                id: 7,
+                id: 26,
                 nombre: "rollo de canela",
                 descripcion: "",
                 precio: 4.5,
@@ -61,42 +61,42 @@ export const elMenu: Categoria[] = [
                 opcional: "Version mini por 2.3k"
             },
             {
-                id: 8,
+                id: 27,
                 nombre: "pan danes",
                 descripcion: "relleno de strudel de manzana",
                 precio: 4.5,
                 img: "https://picsum.photos/200",
             },
             {
-                id: 9,
+                id: 28,
                 nombre: "pan danes",
                 descripcion: "relleno de durazno",
                 precio: 4.5,
                 img: "https://picsum.photos/200",
             },
             {
-                id: 10,
+                id: 29,
                 nombre: "cruffin de matcha",
                 descripcion: "",
                 precio: 5,
                 img: "https://picsum.photos/200",
             },
             {
-                id: 11,
+                id: 30,
                 nombre: "cruffin de coffe toffe",
                 descripcion: "",
                 precio: 5,
                 img: "https://picsum.photos/200",
             },
             {
-                id: 12,
+                id: 31,
                 nombre: "Mini pan babka",
                 descripcion: "con chocolate y avellanas de 9 cm",
                 precio: 6.5,
                 img: "https://picsum.photos/200",
             },
             {
-                id: 13,
+                id: 32,
                 nombre: "rollo de canela brioche",
                 descripcion: "",
                 precio: 4.5,
@@ -204,42 +204,42 @@ export const elMenu: Categoria[] = [
         categoria: "Otros",
         productos: [
             {
-                id: 1,
+                id: 14,
                 nombre: "focaccia",
                 descripcion: "500 gr (peso en crudo)",
                 precio: 20,
                 img: "https://picsum.photos/200"
             },
             {
-                id: 2,
+                id: 15,
                 nombre: "pan baguette",
                 descripcion: "320 gr (peso en crudo)",
                 precio: 3.5,
                 img: "https://picsum.photos/200"
             },
             {
-                id: 3,
+                id: 16,
                 nombre: "pan brioche hamburguesa",
                 descripcion: "100 gr (peso en crudo)",
                 precio: 1.9,
                 img: "https://picsum.photos/200"
             },
             {
-                id: 4,
+                id: 17,
                 nombre: "pan brioche hotdog",
                 descripcion: "75 gr (peso en crudo)",
                 precio: 1.6,
                 img: "https://picsum.photos/200"
             },
             {
-                id: 5,
+                id: 18,
                 nombre: "pan brioche de papa",
                 descripcion: "100 gr (peso en crudo)",
                 precio: 2,
                 img: "https://picsum.photos/200"
             },
             {
-                id: 6,
+                id: 19,
                 nombre: "pan babka de chocolate con avellanas",
                 descripcion: "250 gr (peso en crudo)",
                 precio: 34,

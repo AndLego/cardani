@@ -71,7 +71,8 @@ const Catalogo = ({ productos }: CatalogoProps) => {
                                         id: producto.id,
                                         name: producto.nombre,
                                         price: producto.precio,
-                                        qty: 1
+                                        qty: 1,
+                                        img: producto.img
                                     })}>
                                 <span>Agregar al carrito</span>
                                 <BsCartPlusFill className={style.addImpar} />
