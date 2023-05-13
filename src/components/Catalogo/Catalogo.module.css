@@ -17,20 +17,8 @@
     z-index: -1;
 }
 
-.blob {
-    width: 280px;
-}
-
 .blobImpar {
     margin-top: -32px;
-}
-
-.imgProducto {
-    position: absolute;
-    left: 56px;
-    bottom: 62px;
-    border-radius: 50%;
-    width: 156px;
 }
 
 .img .precio {

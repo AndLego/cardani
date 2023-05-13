@@ -1,6 +1,5 @@
 import React from 'react';
 import { BsCartPlusFill } from 'react-icons/bs';
-import blob1 from "/blob1.svg"
 import flecha from "/flecha.svg"
 import style from "../Catalogo.module.css"
 import { CartContext } from '../../../context/CartProvider';
@@ -53,8 +52,25 @@ const ProductoPar = ({ producto }: ProductoProps) => {
             <img className={style.abajo} src={flecha} alt="" />
 
             <div className={style.img}>
-                <img className={style.blob} src={blob1} alt="blob" />
-                <img className={style.imgProducto} src={producto.img} alt={producto.name} />
+
+                <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="par" ><path fill="currentColor" d="M814 661.5Q687 823 513 800.5T223.5 639Q108 500 219 352.5T513 183q183-22 305.5 147.5t-4.5 331Z" /></clipPath>
+                        <path id="parb" fill="none" stroke="#daa520" stroke-width="10" d="M814 661.5Q687 823 513 800.5T223.5 639Q108 500 219 352.5T513 183q183-22 305.5 147.5t-4.5 331Z" />
+                    </defs>
+
+                    <image
+                        width="720"
+                        height="720"
+                        preserveAspectRatio="xMidYMid slice"
+                        xlinkHref={producto.img}
+                        clipPath="url(#par)"
+                        x="16%"
+                        y="9%"
+                    />
+                    <use href="#parb" />
+                </svg>
+
                 <span className={style.precio}>{producto.price}k</span>
             </div>
 
